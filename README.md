@@ -79,7 +79,7 @@ Instead of *asking AI for answers*, we're shifting to *delegating work to AI and
 
 ## Installation
 
-DeepQuark requires **Node.js (latest)** and is installed via npm. Below are platform-specific instructions.
+DeepQuark requires **Node.js (latest)**, **Python 3**, and **Git**. Below are platform-specific instructions.
 
 ### Windows (via WSL2)
 
@@ -103,7 +103,13 @@ Open the Ubuntu terminal (or run `wsl` from cmd/PowerShell) and run:
 sudo apt update && sudo apt upgrade -y
 ```
 
-**Step 3 — Install Node.js (latest) via NVM**
+**Step 3 — Install Git and Python 3**
+
+```bash
+sudo apt install -y git python3 python3-pip
+```
+
+**Step 4 — Install Node.js (latest) via NVM**
 
 Using NVM (Node Version Manager) makes it easy to manage Node.js versions and avoids permission issues with global packages.
 
@@ -122,7 +128,7 @@ nvm use node
 node -v
 ```
 
-**Step 4 — Install and run DeepQuark**
+**Step 5 — Install and run DeepQuark**
 
 ```bash
 npm install -g @duckmind/deepquark
@@ -137,7 +143,15 @@ deepquark
 
 Installation on macOS is straightforward and works on both Apple Silicon (M1/M2/M3) and Intel chips.
 
-**Step 1 — Install NVM**
+**Step 1 — Install Git and Python 3**
+
+macOS comes with Git pre-installed (via Xcode Command Line Tools). To ensure both Git and Python 3 are available, install [Homebrew](https://brew.sh) if you haven't already, then run:
+
+```bash
+brew install git python3
+```
+
+**Step 2 — Install NVM**
 
 Open **Terminal** (or iTerm2) and run:
 
@@ -148,7 +162,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 source ~/.zshrc
 ```
 
-**Step 2 — Install Node.js (latest)**
+**Step 3 — Install Node.js (latest)**
 
 ```bash
 nvm install node
@@ -158,7 +172,7 @@ nvm use node
 node -v
 ```
 
-**Step 3 — Install and run DeepQuark**
+**Step 4 — Install and run DeepQuark**
 
 ```bash
 npm install -g @duckmind/deepquark
@@ -183,7 +197,21 @@ For Fedora/CentOS:
 sudo dnf update -y
 ```
 
-**Step 2 — Install NVM and Node.js (latest)**
+**Step 2 — Install Git and Python 3**
+
+For Ubuntu/Debian:
+
+```bash
+sudo apt install -y git python3 python3-pip
+```
+
+For Fedora/CentOS:
+
+```bash
+sudo dnf install -y git python3 python3-pip
+```
+
+**Step 3 — Install NVM and Node.js (latest)**
 
 ```bash
 # Install NVM
@@ -200,7 +228,7 @@ nvm use node
 node -v
 ```
 
-**Step 3 — Install and run DeepQuark**
+**Step 4 — Install and run DeepQuark**
 
 ```bash
 npm install -g @duckmind/deepquark
