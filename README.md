@@ -88,3 +88,155 @@ WSL2 (Windows Subsystem for Linux) lets you run a Linux environment directly on 
 **Step 1 — Install WSL2**
 
 Open **PowerShell** as Administrator (right-click Start → Windows PowerShell (Admin) or Terminal (Admin)) and run:
+
+```powershell
+wsl --install
+```
+
+Restart your computer if prompted. After reboot, an Ubuntu terminal window will appear for you to set up a Linux `username` and `password`.
+
+**Step 2 — Update Ubuntu**
+
+Open the Ubuntu terminal (or run `wsl` from cmd/PowerShell) and run:
+
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+**Step 3 — Install Git and Python 3**
+
+```bash
+sudo apt install -y git python3 python3-pip
+```
+
+**Step 4 — Install Node.js (latest) via NVM**
+
+Using NVM (Node Version Manager) makes it easy to manage Node.js versions and avoids permission issues with global packages.
+
+```bash
+# Install NVM
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+
+# Reload shell configuration
+source ~/.bashrc
+
+# Install and activate Node.js (latest)
+nvm install node
+nvm use node
+
+# Verify installation (should print the latest version)
+node -v
+```
+
+**Step 5 — Install and run DeepQuark**
+
+```bash
+npm install -g @duckmind/deepquark
+deepquark
+```
+
+> If `deepquark` is not found, you can run it via npx: `npx @duckmind/deepquark`
+
+---
+
+### macOS
+
+Installation on macOS is straightforward and works on both Apple Silicon (M1/M2/M3) and Intel chips.
+
+**Step 1 — Install Git and Python 3**
+
+macOS comes with Git pre-installed (via Xcode Command Line Tools). To ensure both Git and Python 3 are available, install [Homebrew](https://brew.sh) if you haven't already, then run:
+
+```bash
+brew install git python3
+```
+
+**Step 2 — Install NVM**
+
+Open **Terminal** (or iTerm2) and run:
+
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+
+# Reload shell configuration (macOS defaults to zsh)
+source ~/.zshrc
+```
+
+**Step 3 — Install Node.js (latest)**
+
+```bash
+nvm install node
+nvm use node
+
+# Verify (should print the latest version)
+node -v
+```
+
+**Step 4 — Install and run DeepQuark**
+
+```bash
+npm install -g @duckmind/deepquark
+deepquark
+```
+
+---
+
+### Linux (Ubuntu / Debian / Fedora / CentOS)
+
+**Step 1 — Update your system**
+
+For Ubuntu/Debian:
+
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+For Fedora/CentOS:
+
+```bash
+sudo dnf update -y
+```
+
+**Step 2 — Install Git and Python 3**
+
+For Ubuntu/Debian:
+
+```bash
+sudo apt install -y git python3 python3-pip
+```
+
+For Fedora/CentOS:
+
+```bash
+sudo dnf install -y git python3 python3-pip
+```
+
+**Step 3 — Install NVM and Node.js (latest)**
+
+```bash
+# Install NVM
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+
+# Reload shell configuration
+source ~/.bashrc
+
+# Install and activate Node.js (latest)
+nvm install node
+nvm use node
+
+# Verify
+node -v
+```
+
+**Step 4 — Install and run DeepQuark**
+
+```bash
+npm install -g @duckmind/deepquark
+deepquark
+```
+
+---
+
+## About DuckMind Team
+
+DeepQuark is developed by **DuckMind Team**, with the mission of building AI systems that automate knowledge work, support programming and research, boost individual and organizational productivity, and connect AI with real-world tools.
