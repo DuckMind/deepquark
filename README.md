@@ -1,242 +1,212 @@
 # DeepQuark
 
-**DeepQuark** is an agentic AI platform developed by **DuckMind Team** that shifts the paradigm from "getting answers" to **automatically executing real work**.
+**DeepQuark** là nền tảng AI agentic được phát triển bởi **DuckMind Team**, giúp chuyển từ việc "nhận câu trả lời" sang **tự động thực thi công việc thực tế**.  
+Thay vì chỉ trò chuyện với AI, DeepQuark cho phép AI **truy cập dữ liệu, lập kế hoạch và thực hiện các nhiệm vụ nhiều bước**, giúp người dùng giao việc và quay lại khi công việc đã hoàn thành.
 
-Instead of just chatting with AI, DeepQuark lets AI **access data, plan, and carry out multi-step tasks** — so you can delegate work and come back when it's done.
-
-DeepQuark is designed as an **AI coworker** that runs on your machine, capable of handling complex tasks by breaking them down and executing them step by step until results are delivered.
-
-## From Answers to Action
-
-DeepQuark doesn't just answer questions — it **gets work done**.
-
-You describe the goal. DeepQuark will:
-
-1. Analyze the task
-2. Break it into steps
-3. Execute each step
-4. Track progress
-5. Deliver the final result
-
-You can watch the process in real time or hand it off and come back later.
-
-## How DeepQuark Works
-
-DeepQuark uses an **agentic workflow** model:
-
-1. Understand the user's goal
-2. Decompose it into smaller steps
-3. Plan the execution
-4. Access the necessary data
-5. Execute each step
-6. Synthesize the final result
-
-Along the way, DeepQuark can read files, analyze data, write code, generate reports, create slide decks, and synthesize information from multiple sources.
-
-## Automate Recurring Work
-
-DeepQuark is especially useful for time-consuming, repetitive tasks. You can configure tasks to run daily, weekly, or monthly.
-
-Examples include compiling morning briefings, running periodic data analysis, aggregating customer feedback, and auto-generating dashboards or slide decks.
-
-## Use Cases
-
-### Administrative
-
-Generate daily reports or briefings from multiple data sources such as Discord, WhatsApp, Slack, Notion, GitHub, email, and internal documents — helping you quickly identify what matters most.
-
-### Research & Analysis
-
-DeepQuark can handle complex analytical tasks: market research, data aggregation, calculations, and professional report generation. Results can be exported to PowerPoint, Excel, Markdown, or structured analysis reports.
-
-### Sales & Product
-
-Aggregate feedback from call transcripts, Slack, CRM, and issue trackers. Then identify recurring issues, customer needs, and new product ideas.
-
-### Legal & Compliance
-
-Process large document sets by organizing them chronologically, tagging content, assessing importance, and generating document catalogs — making legal review faster and more systematic.
-
-## You Stay in Control
-
-DeepQuark is built on the **human-in-the-loop** principle. AI assists, but humans make the decisions.
-
-### Runs Locally on Your Machine
-
-DeepQuark runs inside a **virtualized environment (VM)** on your machine. You decide which directories AI can access, which data it can read, and which connectors it's allowed to use. AI cannot access anything you haven't explicitly permitted.
-
-### Confirmation Before Action
-
-For critical actions, DeepQuark will show the execution plan, wait for your confirmation, and only proceed after you approve. You can adjust the plan, change the approach, or cancel at any time.
-
-## Vision
-
-DeepQuark is moving toward a model where AI acts as a true **coworker** — one that understands goals, organizes work, executes multi-step processes, and delivers finished products.
-
-Instead of *asking AI for answers*, we're shifting to *delegating work to AI and receiving results*.
+DeepQuark được thiết kế như một **AI coworker** chạy trên máy của bạn, có thể xử lý các nhiệm vụ phức tạp, tự chia nhỏ công việc và thực hiện tuần tự cho đến khi đạt được kết quả.
 
 ---
 
-## Installation
+# Từ câu trả lời đến hành động
 
-DeepQuark requires **Node.js (latest)**, **Python 3**, and **Git**. Below are platform-specific instructions.
+DeepQuark không chỉ trả lời câu hỏi.  
+Nó giúp **thực hiện công việc**.
 
-### Windows (via WSL2)
+Bạn chỉ cần mô tả mục tiêu. DeepQuark sẽ:
 
-WSL2 (Windows Subsystem for Linux) lets you run a Linux environment directly on Windows, ensuring smoother compatibility with development tools.
+- phân tích nhiệm vụ
+- chia thành các bước
+- thực thi từng bước
+- cập nhật tiến độ
+- tạo ra kết quả cuối cùng
 
-**Step 1 — Install WSL2**
-
-Open **PowerShell** as Administrator (right-click Start → Windows PowerShell (Admin) or Terminal (Admin)) and run:
-
-```powershell
-wsl --install
-```
-
-Restart your computer if prompted. After reboot, an Ubuntu terminal window will appear for you to set up a Linux `username` and `password`.
-
-**Step 2 — Update Ubuntu**
-
-Open the Ubuntu terminal (or run `wsl` from cmd/PowerShell) and run:
-
-```bash
-sudo apt update && sudo apt upgrade -y
-```
-
-**Step 3 — Install Git and Python 3**
-
-```bash
-sudo apt install -y git python3 python3-pip
-```
-
-**Step 4 — Install Node.js (latest) via NVM**
-
-Using NVM (Node Version Manager) makes it easy to manage Node.js versions and avoids permission issues with global packages.
-
-```bash
-# Install NVM
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
-
-# Reload shell configuration
-source ~/.bashrc
-
-# Install and activate Node.js (latest)
-nvm install node
-nvm use node
-
-# Verify installation (should print the latest version)
-node -v
-```
-
-**Step 5 — Install and run DeepQuark**
-
-```bash
-npm install -g @duckmind/deepquark
-deepquark
-```
-
-> If `deepquark` is not found, you can run it via npx: `npx @duckmind/deepquark`
+Bạn có thể theo dõi quá trình theo thời gian thực hoặc giao việc và quay lại sau.
 
 ---
 
-### macOS
+# Cách DeepQuark hoạt động
 
-Installation on macOS is straightforward and works on both Apple Silicon (M1/M2/M3) and Intel chips.
+DeepQuark sử dụng mô hình **agentic workflow**.
 
-**Step 1 — Install Git and Python 3**
+1. Hiểu mục tiêu của người dùng  
+2. Phân rã thành các bước nhỏ  
+3. Lập kế hoạch thực thi  
+4. Truy cập dữ liệu cần thiết  
+5. Thực hiện từng bước  
+6. Tổng hợp kết quả cuối cùng  
 
-macOS comes with Git pre-installed (via Xcode Command Line Tools). To ensure both Git and Python 3 are available, install [Homebrew](https://brew.sh) if you haven't already, then run:
+Trong quá trình đó DeepQuark có thể:
 
-```bash
-brew install git python3
-```
-
-**Step 2 — Install NVM**
-
-Open **Terminal** (or iTerm2) and run:
-
-```bash
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
-
-# Reload shell configuration (macOS defaults to zsh)
-source ~/.zshrc
-```
-
-**Step 3 — Install Node.js (latest)**
-
-```bash
-nvm install node
-nvm use node
-
-# Verify (should print the latest version)
-node -v
-```
-
-**Step 4 — Install and run DeepQuark**
-
-```bash
-npm install -g @duckmind/deepquark
-deepquark
-```
+- đọc file
+- phân tích dữ liệu
+- viết code
+- tạo báo cáo
+- tạo slide
+- tổng hợp thông tin từ nhiều nguồn
 
 ---
 
-### Linux (Ubuntu / Debian / Fedora / CentOS)
+# Tự động hóa công việc lặp lại
 
-**Step 1 — Update your system**
+DeepQuark đặc biệt hữu ích với các nhiệm vụ tốn thời gian.
 
-For Ubuntu/Debian:
+Bạn có thể cấu hình một nhiệm vụ để chạy:
 
-```bash
-sudo apt update && sudo apt upgrade -y
-```
+- hàng ngày
+- hàng tuần
+- hàng tháng
 
-For Fedora/CentOS:
+Ví dụ:
 
-```bash
-sudo dnf update -y
-```
-
-**Step 2 — Install Git and Python 3**
-
-For Ubuntu/Debian:
-
-```bash
-sudo apt install -y git python3 python3-pip
-```
-
-For Fedora/CentOS:
-
-```bash
-sudo dnf install -y git python3 python3-pip
-```
-
-**Step 3 — Install NVM and Node.js (latest)**
-
-```bash
-# Install NVM
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
-
-# Reload shell configuration
-source ~/.bashrc
-
-# Install and activate Node.js (latest)
-nvm install node
-nvm use node
-
-# Verify
-node -v
-```
-
-**Step 4 — Install and run DeepQuark**
-
-```bash
-npm install -g @duckmind/deepquark
-deepquark
-```
+- tổng hợp báo cáo mỗi sáng
+- phân tích dữ liệu định kỳ
+- tổng hợp phản hồi khách hàng
+- tạo dashboard hoặc slide tự động
 
 ---
 
-## About DuckMind Team
+# Ứng dụng trong nhiều lĩnh vực
 
-DeepQuark is developed by **DuckMind Team**, with the mission of building AI systems that automate knowledge work, support programming and research, boost individual and organizational productivity, and connect AI with real-world tools.
+DeepQuark có thể hỗ trợ nhiều loại công việc.
+
+## Administrative
+
+Tạo báo cáo hoặc briefing hằng ngày từ nhiều nguồn dữ liệu khác nhau như:
+
+- Discord/WhatsApp/Slack
+- Notion
+- GitHub
+- Email
+- tài liệu nội bộ
+
+Giúp bạn nhanh chóng nắm được các ưu tiên quan trọng.
+
+---
+
+## Research & Analysis
+
+DeepQuark có thể thực hiện các nhiệm vụ phân tích phức tạp:
+
+- nghiên cứu thị trường
+- tổng hợp dữ liệu
+- thực hiện tính toán
+- tạo báo cáo chuyên nghiệp
+
+Kết quả có thể được xuất ra:
+
+- PowerPoint
+- Excel
+- Markdown
+- báo cáo phân tích
+
+---
+
+## Sales & Product
+
+DeepQuark có thể tổng hợp phản hồi từ nhiều nguồn:
+
+- transcript cuộc gọi
+- Slack
+- CRM
+- issue tracker
+
+Sau đó xác định:
+
+- vấn đề lặp lại
+- nhu cầu khách hàng
+- ý tưởng sản phẩm mới
+
+---
+
+## Legal & Compliance
+
+DeepQuark có thể xử lý các bộ tài liệu lớn:
+
+- sắp xếp tài liệu theo thời gian
+- gắn nhãn nội dung
+- đánh giá mức độ quan trọng
+- tạo danh mục tài liệu
+
+Giúp việc phân tích hồ sơ pháp lý trở nên nhanh và có hệ thống hơn.
+
+---
+
+# Luôn giữ quyền kiểm soát
+
+DeepQuark được thiết kế theo nguyên tắc **human-in-the-loop**.
+
+AI hỗ trợ, nhưng con người vẫn là người quyết định.
+
+---
+
+## Chạy cục bộ trên máy người dùng
+
+DeepQuark chạy trong **môi trường ảo hóa (VM)** trên máy của bạn.
+
+Bạn quyết định:
+
+- thư mục nào AI có thể truy cập
+- dữ liệu nào AI được phép đọc
+- connector nào được phép sử dụng
+
+AI không thể truy cập bất kỳ dữ liệu nào nếu bạn không cho phép.
+
+---
+
+## Xác nhận trước khi hành động
+
+Đối với các hành động quan trọng, DeepQuark sẽ:
+
+1. hiển thị kế hoạch thực hiện
+2. chờ người dùng xác nhận
+3. chỉ thực thi sau khi được đồng ý
+
+Bạn có thể:
+
+- điều chỉnh kế hoạch
+- thay đổi hướng tiếp cận
+- hoặc hủy hành động
+
+---
+
+# DeepQuark Vision
+
+DeepQuark hướng tới mô hình **AI coworker**:
+
+- hiểu mục tiêu
+- tự tổ chức công việc
+- thực thi nhiều bước
+- tạo ra sản phẩm hoàn chỉnh
+
+Thay vì:
+
+> hỏi AI để nhận câu trả lời
+
+Chúng ta chuyển sang:
+
+> giao việc cho AI và nhận kết quả.
+
+---
+
+# DuckMind Team
+
+DeepQuark được phát triển bởi **DuckMind Team**, với mục tiêu xây dựng các hệ thống AI có khả năng:
+
+- tự động hóa công việc tri thức
+- hỗ trợ lập trình và nghiên cứu
+- tăng năng suất cá nhân và tổ chức
+- kết nối AI với các công cụ thực tế
+
+---
+
+# Research Preview
+
+DeepQuark hiện đang trong giai đoạn **research preview**.
+
+Các khả năng agentic vẫn đang được cải tiến và phát triển.
+
+Người dùng nên:
+
+- kiểm tra các hành động quan trọng
+- xác nhận trước khi cho phép AI thực thi
+- sử dụng DeepQuark như một cộng sự AI, không phải hệ thống tự trị hoàn toàn
